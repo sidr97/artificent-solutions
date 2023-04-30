@@ -37,7 +37,8 @@ given_transforms = torch.nn.Sequential(
     T.RandomAffine(degrees=(-5, 5), translate=(0.1, 0.1), scale=(0.9, 1.1)),
     T.RandomRotation(degrees=(-5, 5)),
     T.RandomHorizontalFlip(p=0.5),
-    T.CenterCrop(size=(160, 320)),
+    T.CenterCrop(size=(320, 640)),
+    T.Resize(size=(160, 320)),
     T.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.4, hue=0.2)
 )
 
